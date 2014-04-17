@@ -2,7 +2,13 @@
 <html>
   <head>
     <title>Compass Example</title>
-
+	<style>
+		#heading{
+			color: #dedede;
+			background-color: transparent;
+			font-size: 25px;
+		}
+	</style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -42,7 +48,7 @@
     //
     function onSuccess(heading) {
         var element = document.getElementById('heading');
-        element.innerHTML = 'Heading: ' + heading.magneticHeading;
+        element.innerHTML = heading.magneticHeading + '°';
     }
 
     // onError: Failed to get the heading
@@ -55,7 +61,9 @@
   </head>
   <body>
     <div id="heading">Waiting for heading...</div>
-    <button onclick="startWatch();">Start Watching</button>
+    <!--
+	<button onclick="startWatch();">Start Watching</button>
     <button onclick="stopWatch();">Stop Watching</button>
+	-->
   </body>
 </html>
